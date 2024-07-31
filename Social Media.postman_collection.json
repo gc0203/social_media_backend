@@ -1,0 +1,643 @@
+{
+	"info": {
+		"_postman_id": "a991bbea-9a04-4f0e-8f04-45569bf6e9ad",
+		"name": "Social Media",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37018123"
+	},
+	"item": [
+		{
+			"name": "ping",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/ping",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"ping"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"gcgc\",\r\n    \"password\":\"02\",\r\n    \"role\":\"user\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjY5ODlmY2MzNzc3MWUyNzFiZjRiZmJjIn0sImlhdCI6MTcyMTI4MzQ3Nn0.Yco0U8jcK5dUV6L-aETicyEKjaftJcyLDowSNP34rZo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    \r\n{    \r\n    \"user\":\"66989fcc37771e271bf4bfbc\",\r\n    \"bio\":\"I am Gervit\",\r\n    \"profilePicture\":\"https://picsum.photos/id/237/200/300\",\r\n    \"socialLinks\":[\"http://facebook.com/exampleUser\",\"http://instagram.com/exampleUser\"],\r\n    \"followers\":[]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/profile",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "profile by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjY5ODlmY2MzNzc3MWUyNzFiZjRiZmJjIn0sImlhdCI6MTcyMTI4MzQ3Nn0.Yco0U8jcK5dUV6L-aETicyEKjaftJcyLDowSNP34rZo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/profile/66989fcc37771e271bf4bfbc",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"profile",
+						"66989fcc37771e271bf4bfbc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete current profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjY5ODlmY2MzNzc3MWUyNzFiZjRiZmJjIn0sImlhdCI6MTcyMTI4MzQ3Nn0.Yco0U8jcK5dUV6L-aETicyEKjaftJcyLDowSNP34rZo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/profile/me",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"profile",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjY5ODlmY2MzNzc3MWUyNzFiZjRiZmJjIn0sImlhdCI6MTcyMTI4MzQ3Nn0.Yco0U8jcK5dUV6L-aETicyEKjaftJcyLDowSNP34rZo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user\":\"66989fcc37771e271bf4bfbc\",\r\n    \"content\":\"Welcome to My first post\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/posts",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get post by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjY5ODlmY2MzNzc3MWUyNzFiZjRiZmJjIn0sImlhdCI6MTcyMTI4MzQ3Nn0.Yco0U8jcK5dUV6L-aETicyEKjaftJcyLDowSNP34rZo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/posts/6698da91f76039c851d0ea99",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						"6698da91f76039c851d0ea99"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updatepost",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjY5ODlmY2MzNzc3MWUyNzFiZjRiZmJjIn0sImlhdCI6MTcyMTI4MzQ3Nn0.Yco0U8jcK5dUV6L-aETicyEKjaftJcyLDowSNP34rZo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"content\":\"Updated  My first post\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/posts/6698da91f76039c851d0ea99",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						"6698da91f76039c851d0ea99"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deletepostbyid",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjY5ODlmY2MzNzc3MWUyNzFiZjRiZmJjIn0sImlhdCI6MTcyMTI4MzQ3Nn0.Yco0U8jcK5dUV6L-aETicyEKjaftJcyLDowSNP34rZo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/posts/6698da91f76039c851d0ea99",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						"6698da91f76039c851d0ea99"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "followuser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjZhMDhhNjUxYmJiZjFmZDBhNjEwMjQ3In0sImlhdCI6MTcyMTc5NzQ1OH0.gmIOl_q9ytUuvPtYq6pKdpHRPGTHFpAxVL4jAPcIJMY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/users/6697981aec78353785a50263/follow",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"6697981aec78353785a50263",
+						"follow"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getfollowing",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjZhMDhhNjUxYmJiZjFmZDBhNjEwMjQ3In0sImlhdCI6MTcyMTc5NzQ1OH0.gmIOl_q9ytUuvPtYq6pKdpHRPGTHFpAxVL4jAPcIJMY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/users/66a08a651bbbf1fd0a610247/following",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"66a08a651bbbf1fd0a610247",
+						"following"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getfollowers",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjZhMDhhNjUxYmJiZjFmZDBhNjEwMjQ3In0sImlhdCI6MTcyMTc5NzQ1OH0.gmIOl_q9ytUuvPtYq6pKdpHRPGTHFpAxVL4jAPcIJMY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/users/6697981aec78353785a50263/followers",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"6697981aec78353785a50263",
+						"followers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "unfollowuser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjZhMDhhNjUxYmJiZjFmZDBhNjEwMjQ3In0sImlhdCI6MTcyMTc5NzQ1OH0.gmIOl_q9ytUuvPtYq6pKdpHRPGTHFpAxVL4jAPcIJMY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/users/6697981aec78353785a50263/follow",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"6697981aec78353785a50263",
+						"follow"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add a comment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjZhMDhhNjUxYmJiZjFmZDBhNjEwMjQ3In0sImlhdCI6MTcyMTc5NzQ1OH0.gmIOl_q9ytUuvPtYq6pKdpHRPGTHFpAxVL4jAPcIJMY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"content\":\"This is a comment\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/posts/66a0ab2907699e3753125ac5/comments",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						"66a0ab2907699e3753125ac5",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all comments",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjZhMDhhNjUxYmJiZjFmZDBhNjEwMjQ3In0sImlhdCI6MTcyMTc5NzQ1OH0.gmIOl_q9ytUuvPtYq6pKdpHRPGTHFpAxVL4jAPcIJMY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/posts/66a0ab2907699e3753125ac5/comments",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						"66a0ab2907699e3753125ac5",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deletecomment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjZhMDhhNjUxYmJiZjFmZDBhNjEwMjQ3In0sImlhdCI6MTcyMTgwMzQ5NX0.9hfG2mR9EHWfqqv4kTNEj569p8ZVnQ3r6LUSn9XtuK8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/posts/6698da91f76039c851d0ea99/comments/66a0a367f52e00462258cb7d",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						"6698da91f76039c851d0ea99",
+						"comments",
+						"66a0a367f52e00462258cb7d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "likepost",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjZhMDhhNjUxYmJiZjFmZDBhNjEwMjQ3In0sImlhdCI6MTcyMTgwMzQ5NX0.9hfG2mR9EHWfqqv4kTNEj569p8ZVnQ3r6LUSn9XtuK8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/posts/66a0ab2907699e3753125ac5/likes",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						"66a0ab2907699e3753125ac5",
+						"likes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "unlikepost",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjZhMDhhNjUxYmJiZjFmZDBhNjEwMjQ3In0sImlhdCI6MTcyMTgwMzQ5NX0.9hfG2mR9EHWfqqv4kTNEj569p8ZVnQ3r6LUSn9XtuK8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/posts/66a0ab2907699e3753125ac5/likes",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						"66a0ab2907699e3753125ac5",
+						"likes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "searchuser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjZhMDhhNjUxYmJiZjFmZDBhNjEwMjQ3In0sImlhdCI6MTcyMTgwMzQ5NX0.9hfG2mR9EHWfqqv4kTNEj569p8ZVnQ3r6LUSn9XtuK8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/search/users?keyword=ger",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"search",
+						"users"
+					],
+					"query": [
+						{
+							"key": "keyword",
+							"value": "ger"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "searchposts",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjZhMDhhNjUxYmJiZjFmZDBhNjEwMjQ3In0sImlhdCI6MTcyMTgwMzQ5NX0.9hfG2mR9EHWfqqv4kTNEj569p8ZVnQ3r6LUSn9XtuK8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/search/posts?keyword=welcome",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"search",
+						"posts"
+					],
+					"query": [
+						{
+							"key": "keyword",
+							"value": "welcome"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
